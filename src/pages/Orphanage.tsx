@@ -12,7 +12,6 @@ import api from "../services/api"
 
 
 interface Orphanage {
-  id: number;
   latitude: number;
   longitude: number;
   name: string;
@@ -21,7 +20,7 @@ interface Orphanage {
   opening_hours: string;
   open_on_weekends: string;
   images: Array<{
-    url: string;
+    url: string
   }>;
 }
 
@@ -36,8 +35,9 @@ export default function Orphanage() {
   useEffect(() => {
     api.get(`orphanages/${params.id}`).then(response => {
       setOrphanage(response.data)
-    })
-  }, [params.id])
+    });
+  }, [params.id]);
+
   if (!orphanage) {
     return <p>Carregando...</p>
   }
@@ -93,7 +93,7 @@ export default function Orphanage() {
               </MapContainer>
 
               <footer>
-                <a href="">Ver rotas no Google Maps</a>
+                <a href="#">Ver rotas no Google Maps</a>
               </footer>
             </div>
 
@@ -116,7 +116,7 @@ export default function Orphanage() {
                 </div>
               ) : (
                   <div className="open-on-weekends dont-open">
-                    <FiInfo size={32} color="#39CC83" />
+                    <FiInfo size={32} color="#ff669d" />
               Não atendemos <br />
               fim de semana
                   </div>

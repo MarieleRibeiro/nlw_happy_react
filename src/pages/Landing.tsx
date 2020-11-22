@@ -23,7 +23,7 @@ function Landing() {
                 <div className="location">
                     <strong>Guarapuava</strong>
                     <span>Paraná</span>
-                    <p>hei</p>
+
                 </div>
 
                 <Link to="/app" className="enter-app">
